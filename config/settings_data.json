@@ -76,7 +76,7 @@
           "message_etHLdM": {
             "type": "message",
             "settings": {
-              "text": "Disfruta nuestras OFERTAS FLASH con hasta -80%",
+              "text": "Disfruta nuestras OFERTAS FLASH con hasta -90%",
               "url": ""
             }
           }
@@ -100,6 +100,7 @@
         "settings": {
           "enable_sticky": true,
           "hide_on_scroll": false,
+          "logo": "shopify://shop_images/logo.svg",
           "logo_max_width": 160,
           "logo_mobile_max_width": 165,
           "menu": "main-menu",
