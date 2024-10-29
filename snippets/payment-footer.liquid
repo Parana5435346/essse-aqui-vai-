@@ -1,0 +1,127 @@
+<div class="footer__item footer__item--Pagamento-Seguranca "><style>
+                .selos-wrap {
+                display: flex;
+                float: left;
+                margin-top: -15px;
+                }
+                .payment-box {
+                margin-top: -5px;
+                margin-bottom: .5rem;
+                display:flex;
+                }
+                @media screen and (min-width: 740px) {
+                .payment-box {
+                display: flex;
+                flex-wrap: inherit;
+                }
+                }
+                .separator-footer {
+                width: 100%;
+                height: 1px;
+                background: #cecdcd;
+                float: left;
+                margin: 15px auto;
+                clear: both
+                }
+                .footer__item.footer__item--Pagamento-Seguranca {
+                grid-column: span 2;
+                }
+                .payment-icon {
+                width: 55px;
+                height: 38px;
+                border-radius: 6px;
+                margin-top: .3rem;
+                margin-right: 9px;
+                line-height: 40px;
+                font-size: 32px;
+                flex-grow: 1
+                }
+                .payment-icon img {
+                margin-top: 0;
+                min-width: 27px !important;
+                min-height: 30px !important
+                }
+                .no-margin-la {
+                margin-left: 0
+                }
+                .margin--1a {
+                margin-right: 5px !important;
+                }
+                .selo {
+                width: 100%;
+                height: 55px;
+                margin-top: .7rem;
+                margin-right: 20px
+                }
+                .selo img {
+                display: block;
+                margin: 0 auto
+                } 
+             </style>
+  
+             <div class="footer__item-title heading heading--small">
+               {% if section.settings.show_payment_icons == true %}
+                <span class="footer__item-title heading heading--small">Métodos de pago</span>
+                <div style="margin-bottom:8px;"></div>
+                <div class="payment-box">                   
+                   {% if section.settings.visa == true %}
+                   <div class="payment-icon margin-la"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Visa_480x480.svg?v=1699219754" width="50" height="25" class="fluid-i lazyload" alt="Visa"></div>
+                   {% endif %}
+                    {% if section.settings.dinner == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Dinners_480x480.svg?v=1699219832" width="50" height="25" class="fluid-i lazyload" alt="Dinners"></div>
+                    {% endif %}
+                    {% if section.settings.master == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/MasterCard_480x480.svg?v=1699219865" width="50" height="25" class="fluid-i lazyload" alt="MasterCard"></div>
+                    {% endif %}
+                   {% if section.settings.hiper == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Hipercard_480x480.svg?v=1699219897" width="50" height="25" class="fluid-i lazyload" alt="Hipercard"></div>
+                   {% endif %}
+                   {% if section.settings.aura == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Auracard_480x480.svg?v=1699219949" width="50" height="25" class="fluid-i lazyload" alt="Auracard"></div>
+                   {% endif %}
+                </div>
+                <div class="payment-box">
+                   {% if section.settings.elo == true %}
+                   <div class="payment-icon margin-la"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Elo_480x480.svg?v=1699219983" width="50" height="25" class="fluid-i lazyload" alt="Elo"></div>
+                   {% endif %}
+                   {% if section.settings.amex == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/AmericanExpress_480x480.svg?v=1699220022" width="50" height="25" class="fluid-i lazyload" alt="American Express"></div>
+                   {% endif %}
+                   {% if section.settings.discover == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Discovercard_480x480.svg?v=1699220056" width="50" height="25" class="fluid-i lazyload" alt="Discovercard"></div>
+                   {% endif %}
+                   {% if section.settings.boleto == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Boleto_480x480.svg?v=1699220086" width="50" height="25" class="fluid-i lazyload" alt="Boleto"></div>
+                   {% endif %}
+                   {% if section.settings.pix == true %}
+                   <div class="payment-icon margin--1a"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/Pix_480x480.svg?v=1699220120" style="margin-top= 2px !important" width="50" height="25" class="fluid-i lazyload" alt="Pix"></div>
+                   {% endif %}
+                   
+                </div>
+                {% if section.settings.loja_verificada == true %}
+                <div class="separator-footer"></div>
+                {% endif %}
+                {% endif %}
+                {% if section.settings.loja_verificada == true %}
+                <div class="footer__collapsible-content">
+                   <div class="footer__item-title heading heading--small" style="margin-bottom:8px;">Tienda segura</div>
+                   <div class="selos-wrap">
+                     {% if section.settings.site_seguro %}
+                      <a href="{{ section.settings.link_google }}">
+                         <div class="selo" style="margin-left:-5px !important"><img src="https://i.ibb.co/9Yyjf0V/google-fr.png" alt="google-fr" border="0"></div>
+                      </a>
+                      {% endif %} 
+                      {% if section.settings.reclameaqui %}
+                      <a href="{{ section.settings.link_reclame }}">
+                         <div class="selo"><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/SelodoReclameAqui_480x480.svg?v=1699220261" class="lazyload" width="90" height="35" alt="Selo do Reclame Aqui"> </div>
+                      </a>
+                        {% endif %}
+                       {% if section.settings.ssl %}
+                      <a href="{{ section.settings.link_ssl }}">
+                         <div class="selo"><img src="https://i.ibb.co/D1Sh7gk/ssl-fr.png" alt="ssl-fr" border="0"> </div>
+                      </a>
+                     {% endif %}
+                   </div>
+                </div>
+                {% endif %}
+             </div></div>

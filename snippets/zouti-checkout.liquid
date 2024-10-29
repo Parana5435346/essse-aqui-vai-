@@ -1,0 +1,114 @@
+<style>
+        #checkout-secure-loader {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            display: none;
+            background: #fff;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+        }
+    
+        #checkout-secure-loader .loader__wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          flex-shrink: 0;
+          gap: 21px;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        #checkout-secure-loader .loader__title,
+        #checkout-secure-loader .loader__subtitle {
+          line-height: 150%;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+        }
+    
+        #checkout-secure-loader .loader__title {
+          text-transform: inherit;
+          font-weight: bold;
+          font-size: 16px;
+          color: #141414;
+        }
+    
+        #checkout-secure-loader .loader__subtitle {
+          font-weight: normal;
+          font-size: 14px;
+          color: #141414;
+        }
+    
+        #checkout-secure-loader .loader__icon {
+          animation: rotateAnimation 1300ms infinite linear;
+        }
+    
+        @keyframes rotateAnimation {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+    </style>
+    
+    <div id="checkout-secure-loader">
+        <div class="loader__wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="none" viewBox="0 0 65 65" class="loader__icon">
+                <defs>
+                    <linearGradient id="spinner-secondHalf">
+                    <stop offset="0%" stop-color="#27AE60" stop-opacity="0"></stop>
+                    <stop offset="100%" stop-color="#29B765" stop-opacity="0.5"></stop>
+                    </linearGradient>
+                    <linearGradient id="spinner-firstHalf">
+                    <stop offset="0%" stop-color="#29B765"></stop>
+                    <stop offset="100%" stop-color="#29B765" stop-opacity="0.5"></stop>
+                    </linearGradient>
+                </defs>
+    
+                <g stroke-width="6">
+                    <path stroke="url(#spinner-secondHalf)" d="M3 32.5a29.5 29.5 0 0159 0"></path>
+                    <path stroke="url(#spinner-firstHalf)" d="M62 32.5a29.5 29.5 0 01-59 0"></path>
+                    <path stroke="#29B765" stroke-linecap="round" d="M3 32.5A29.5 29.5 0 013 31"></path>
+                </g>
+                <animateTransform attributeName="transform" dur="1300ms" from="0 0 0" repeatCount="indefinite" to="360 0 0" type="rotate"></animateTransform>
+            </svg>
+    
+            <div class="loader__text">
+                <h2 class="loader__title">Cargando entorno seguro</h2>
+                <h3 class="loader__subtitle">Por favor, no actualice la página</h3>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        if (typeof jQuery == 'undefined') {
+            document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></' + 'script>');
+        }
+    </script>
+    
+    <script>
+        // Data that comes from Zouti
+        var checkoutUrl = 'https://pay.zouti.com.br';
+        var checkoutSkipCart = false;
+        var checkoutInFrame = false;
+        var checkoutApiUrl = 'https://apiv1.zouti.com.br';
+    
+        // Data that comes from Shopify
+        var shopSecureUrl = '{{ shop.secure_url }}';
+        var shopShopifyDomain = '{{ shop.permanent_domain }}';
+        var shopTemplateName = '{{ template.name }}';
+    
+        // Adding Zouti Redirect Script
+        var script = document.createElement("script");
+        script.type = "application/javascript";
+        script.src = 'https://zouti-prod-core-media-public.s3.amazonaws.com/scripts/shopify-script.js';
+        document.body.appendChild(script);
+    </script>
