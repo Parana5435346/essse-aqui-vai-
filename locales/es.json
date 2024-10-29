@@ -84,7 +84,7 @@
       "added_to_cart": "Añadido a la cesta",
       "sold_out_badge": "Agotado",
       "on_sale_badge": "90%OFF",
-      "discount_badge_html": "Ahorra {{ savings }}",
+      "discount_badge_html": "90%OFF",
       "sku": "SKU:",
       "variant": "Variante",
       "view_in_space": "Ver en tu espacio",
